@@ -1,2 +1,2 @@
 # Small-Testing
-Very small begginer level coding projects
+Very small beginner level coding projects
