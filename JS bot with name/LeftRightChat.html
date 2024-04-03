@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Chat Bot</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  .chat-container {
+    width: 300px;
+    margin: 50px auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #fff;
+  }
+  .chat-messages {
+    height: 200px;
+    overflow-y: auto;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  .user-message {
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  .bot-message {
+    margin-bottom: 10px;
+    text-align: right;
+  }
+</style>
+</head>
+<body>
+
+<div class="chat-container">
+  <div class="chat-messages" id="chat-messages"></div>
+  <input type="text" id="user-input" placeholder="Type your message...">
+  <button id="send-btn">Send</button>
+</div>
+
+<script>
+  const messagesDiv = document.getElementById('chat-messages');
+  const userInput = document.getElementById('user-input');
+  const sendBtn = document.getElementById('send-btn');
+  let userName = '';
+
+  function botResponse(userInput) {
+    const greetings = ['hi', 'hello'];
+    const responses = ['hi hello', 'hello dear'];
+
+    if (greetings.includes(userInput.toLowerCase())) {
+      return responses[Math.floor(Math.random() * responses.length)];
+    } else if (userInput.toLowerCase() === 'what is your name.') {
+      return "I am rubby. What is your name.";
+    } else if (userInput.toLowerCase().startsWith('my name is ')) {
+      userName = userInput.slice(11);
+      return "Cool.";
+    } else if (userInput.toLowerCase() === 'how are you.') {
+      return "I am fine.";
+    } else if (userInput.toLowerCase() === 'bye.') {
+      return `Goodbye ${userName || 'there'}.`;
+    } else {
+      return "Sorry, I didn't understand that.";
+    }
+  }
+
+  function sendMessage(message, sender) {
+    const messageDiv = document.createElement('div');
+    if (sender === 'User') {
+      messageDiv.classList.add('user-message');
+      messageDiv.innerHTML = `<strong>${sender}:</strong> ${message}`;
+    } else {
+      messageDiv.classList.add('bot-message');
+      messageDiv.innerHTML = `<strong>${sender}:</strong> ${message}`;
+    }
+    messagesDiv.appendChild(messageDiv);
+  }
+
+  function handleUserInput() {
+    const userInputText = userInput.value.trim();
+    if (userInputText !== '') {
+      sendMessage(userInputText, 'User');
+      userInput.value = '';
+      setTimeout(() => {
+        const botMessage = botResponse(userInputText);
+        sendMessage(botMessage, 'Bot');
+      }, 500);
+    }
+  }
+
+  sendBtn.addEventListener('click', handleUserInput);
+  userInput.addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+      handleUserInput();
+    }
+  });
+
+  handleUserInput(); // Greet the user initially
+</script>
+
+</body>
+</html>
