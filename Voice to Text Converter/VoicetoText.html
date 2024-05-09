@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice to Text Converter</title>
+</head>
+<body>
+    <h1>Voice to Text Converter</h1>
+    <button id="startRecord">Start Recording</button>
+    <input type="text" id="textInput" placeholder="Converted Text will appear here" style="width: 100%; margin-top: 10px;">
+    
+    <script>
+        // Function to handle speech recognition
+        function startSpeechRecognition() {
+            const recognition = new webkitSpeechRecognition(); // Create speech recognition object
+            recognition.lang = 'en-US'; // Set language to English (you can change it as per your requirement)
+            
+            // Start speech recognition
+            recognition.start();
+            
+            // Event listener for when speech is recognized
+            recognition.onresult = function(event) {
+                const result = event.results[0][0].transcript; // Get the recognized text
+                document.getElementById('textInput').value = result; // Display the text in the input field
+            };
+            
+            // Event listener for errors
+            recognition.onerror = function(event) {
+                console.error('Speech recognition error:', event.error);
+            };
+        }
+        
+        // Add event listener to the button to start recording
+        document.getElementById('startRecord').addEventListener('click', startSpeechRecognition);
+    </script>
+</body>
+</html>
