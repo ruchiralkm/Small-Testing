@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #cbdaff;
+}
+.bgImage{
+    width: 100%;
+    transform: rotate(180deg);
+    bottom: 0;
+    position: absolute;
+    z-index: -1;
+}
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    height: 650px;
+    background-color: white;
+    border-radius: 24px;
+    overflow: hidden;
+}
+.header{
+    justify-content: center;
+}
+
+.headerImg{
+    object-fit: cover;
+    border-radius: 24px 24px 0 0;
+    object-fit: cover;
+}
+.order{
+    margin-top: 20px;
+    text-align: center;
+}
+.topic{
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: 900;
+    font-size: 26px;
+}
+.paragraph{
+    font-size: 18px;
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: 500;
+    color: hsl(224, 23%, 55%);
+}
+.shortBox{
+    display: flex;
+    align-items: center;
+    margin: 40px;
+    width: 80%;
+    height: 70px;
+    background-color: hsl(225, 100%, 98%);
+    border-radius: 5px;
+}
+.musicImg{
+    margin-left: 30px;
+}
+.priceHead{
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: 700;
+    margin-left: 10px;
+}
+.priceHead2{
+    font-weight: 500;
+    color: rgb(155, 155, 155);
+}
+.change{
+    font-family: "Red Hat Display", sans-serif;
+    color: #766cf1;
+    margin-left: 80px;
+    font-weight: 800;
+    cursor: pointer;
+}
+.button01{
+    margin-left: 16%;
+}
+.btn{
+    width: 300px;
+    height: 50px;
+    background-color: #382ae1;
+    border: none;
+    outline: none;
+    color: white;
+    font-weight: 700;
+    font-family: "Red Hat Display", sans-serif;
+    border-radius: 12px;
+    -webkit-box-shadow: 7px 11px 35px 3px rgba(0,0,0,0.26); 
+    box-shadow: 7px 11px 35px 3px rgba(0,0,0,0.26);
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: #766cf1;
+}
+.cancel{
+    margin-left: 100px;
+    color: hsl(224, 23%, 55%);
+    font-family: "Red Hat Display", sans-serif;
+    font-weight: 750;
+    font-size: 15px;
+    cursor: pointer;
+}
+.cancel:hover{
+    color: black;
+}
+
+
+
+
+/* Media Queries for Responsive Design */
+
+@media (max-width: 768px) {
+    .box {
+        width: 350px;
+        height: auto;
+    }
+
+    .shortBox {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 20px;
+        width: calc(100% - 40px);
+        height: auto;
+        padding: 10px;
+    }
+
+    .musicImg {
+        margin: 0;
+    }
+
+    .priceHead {
+        margin-left: 0;
+    }
+
+    .change {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .button01 {
+        margin-left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: calc(100% - 40px);
+    }
+
+    .cancel {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .box {
+        width: 300px;
+    }
+
+    .topic {
+        font-size: 22px;
+    }
+
+    .paragraph {
+        font-size: 16px;
+    }
+
+    .shortBox {
+        margin: 10px;
+        width: calc(100% - 20px);
+    }
+
+    .btn {
+        width: calc(100% - 20px);
+    }
+
+    .cancel {
+        margin-top: 10px;
+    }
+}
