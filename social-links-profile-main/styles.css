@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+body{
+    background-color: hsl(0, 0%, 8%);
+}
+.box{
+    padding: 0;
+    align-items: center;
+    margin-left: 35%;
+    margin-top: 150px;
+    margin-bottom: 10px;
+    width: 400px;
+    height: 530px;
+    background-color: hsl(0, 0%, 12%);
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.38); 
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.38);
+    border-radius: 15px;
+
+}
+
+.userProPic{
+    width: 100px;
+    height: 100px;
+    margin-left: 150px;
+    margin-top: 10px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.names{
+    display:contents;
+}
+.name{
+    margin-left: 130px;
+    color: white;
+    font-size: 20px;
+    font-family: "Inter", sans-serif;
+}
+.name2{
+    margin-left: 115px;
+    color: hsl(75, 94%, 57%);
+    font-size: 15px;
+    font-family: "Inter", sans-serif;
+}
+.name3{
+    margin-left: 70px;
+    color: white;
+    font-size: 14px;
+    font-family: "Inter", sans-serif;
+}
+.buttons{
+    margin-left: 13%;
+}
+.btn{
+    margin-top: 10px;
+    background: hsl(0, 0%, 20%);
+    width: 300px;
+    height: 40px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: "Inter", sans-serif;
+}
+.btn:hover{
+    color: black;
+    background: hsl(75, 94%, 57%);
+}
